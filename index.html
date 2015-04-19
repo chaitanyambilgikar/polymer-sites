@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <script src="bower_components/webcomponentsjs/webcomponents.js">
+  </script>
+  <link rel="import" href="elements.html">
+  <link rel="stylesheet" type="text/css" href="app.css">
+</head>
+
+<body fullbleed layout vertical unresolved>
+  <core-head-panel>
+    <core-toolbar>
+      <paper-tabs id="tabs" selected="0" selectedIndex="0" class="core-selected" self-end>
+        <paper-tab name="home">Home</paper-tab>
+        <paper-tab name="blog">Blog</paper-tab>
+        <paper-tab name="aboutMe">About Me</paper-tab>
+        <paper-tab name="social">Social Work</paper-tab>
+        <paper-tab name="resume">Resume</paper-tab>
+      </paper-tabs>
+    </core-toolbar>
+    <div class="container" layout vertical center>
+      <post-card>
+        <img width="70" height="70" src="images/avatar-07.svg">
+        <h2>Another Developer</h2>
+        <p>I'm composing with shadow DOM!</p>
+      </post-card>
+    </div>
+  </core-head-panel>
+  <!-- Script for selecting the tab -->
+  <script>
+  var tabs = document.querySelector('paper-tabs');
+
+  tabs.addEventListener('core-select', function() {
+    console.log("Selected: " + tabs.selected);
+  });
+  </script>
+</body>
+
+</html>
